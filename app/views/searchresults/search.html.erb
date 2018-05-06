@@ -1,0 +1,61 @@
+
+<div class= "container">
+
+<h1>Global Search Results Page</h1>
+
+<br>
+<br>
+
+
+ <%= render 'layouts/searchform' %>
+
+             <!-- Heading Area -->
+                  <div class="">
+                
+                        <!-- Main Title -->
+                        <h1><span class="heading-color"><%= @adds.count + @motors.count %>&nbsp</span>results found in search</h1>
+                        <!-- Short Description -->
+                        <% if @adds.count + @motors.count < 1 %>
+                        <p class="heading-text">See all <a href="/ads">General Products</a>&nbsp| <a href="/motors">Automobile</a> </p><% end %>
+                     </div>
+            
+
+  <!--Adds results-->      
+
+          <% if @adds.count > 1 %>                     
+<div style="color: red"><%= @adds.count %>&nbspfound in Adds</div>
+
+
+
+<% @adds.each do |add| %>
+
+<h3><%= link_to truncate(add.name.titleize, length: 35), add %> | in  <%= add.town %></h3>
+
+
+
+  <% end %>
+    <% end %>
+
+
+<br>
+<br>
+
+
+   <!--Motors results-->      
+
+          <% if @motors.count > 1 %>                     
+<div style="color: red"><%= @motors.count %>&nbspfound in Motors</div>
+
+
+
+<% @motors.each do |motor| %>
+
+<h3><%= link_to truncate(motor.title.titleize, length: 35), motor %> | in  <%= motor.town %></h3>
+
+
+
+  <% end %>
+    <% end %>
+
+
+</div>

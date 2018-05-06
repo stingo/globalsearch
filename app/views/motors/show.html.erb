@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<%= render 'layouts/searchform' %>
+
+<br>
+
+<p>
+  <strong>Name:</strong>
+  <%= @motor.title %>
+</p>
+
+
+<p>
+  <strong>Town:</strong>
+  <%= @motor.town %>
+</p>
+
+<p>
+  <strong>Local area:</strong>
+  <%= @motor.local_area %>
+</p>
+
+<%= link_to 'Edit', edit_motor_path(@motor) %> |
+<%= link_to 'Back', motors_path %>

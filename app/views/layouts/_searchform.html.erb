@@ -1,0 +1,55 @@
+
+<div class="container">
+  <div class="search-form">
+    <div class="card">
+      <div class="row" style="margin-top: -10px">
+       
+
+         <%= form_with url: search_path, local: true, method: :get do |form| %>
+
+                    <div class="row search-row animated fadeInUp">
+                        <div class="col-xl-5 col-lg-5 col-sm-4 search-col relative locationicon">
+                            <i class="icon-location-2 icon-append"></i>
+
+                            
+
+                            <%= form.text_field :q, placeholder: "I'm looking for", class: "form-control locinput input-rel searchtag-input has-icon" %>
+
+
+                            <!--input type="text" name="country" id="autocomplete-ajax"
+                                   class="form-control locinput input-rel searchtag-input has-icon"
+                                   placeholder="City/Zipcode..." value=""-->
+
+                        </div>
+                        <div class="col-xl-4 col-sm-4 search-col relative"><i class="icon-docs icon-append"></i>
+
+                            <%= form.text_field :i, placeholder: "Area, Town, State or Country", class: "form-control locinput input-rel searchtag-input has-icon" %>
+
+                            
+
+                            <!--input type="text" name="ads" class="form-control has-icon"
+                                   placeholder="I'm looking for a ..." value=""-->
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-sm-4 search-col">
+                            <button class="btn btn-up-green btn-search btn-block">Search <i class="fa fa-search" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+<% end %>
+
+ 
+        </div>
+      </div>
+    </div>
+
+    
+
+
+    <div class="text-center hidden-lg">
+      <a href="whatsapp://send?text=<%= request.original_url %>">Share On WhatsApp &nbsp<i class="ion-social-whatsapp up-green" style="font-size: 26px;"></i>
+        <%#= image_tag("fallback/whatsappshare.png") %>
+    </a>
+   
+  </div>
+ <br>
+  </div>
+
