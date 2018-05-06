@@ -9,21 +9,7 @@
 
  <%= render 'layouts/searchform' %>
 
-             <!-- Heading Area -->
-                  <div class="">
-                
-                        <!-- Main Title -->
-                        <h1><span class="heading-color"><%= @adds.count + @motors.count %>&nbsp</span>results found in search</h1>
-                        <!-- Short Description -->
-                        <% if @adds.count + @motors.count < 1 %>
-                        <p class="heading-text">See all <a href="/ads">General Products</a>&nbsp| <a href="/motors">Automobile</a> </p><% end %>
-                     </div>
-            
 
-  <!--Adds results-->      
-
-          <% if @adds.count > 1 %>                     
-<div style="color: red"><%= @adds.count %>&nbspfound in Adds</div>
 
 
 
@@ -34,7 +20,7 @@
 
 
   <% end %>
-    <% end %>
+
 
 
 <br>
@@ -43,8 +29,7 @@
 
    <!--Motors results-->      
 
-          <% if @motors.count > 1 %>                     
-<div style="color: red"><%= @motors.count %>&nbspfound in Motors</div>
+
 
 
 
@@ -55,7 +40,6 @@
 
 
   <% end %>
-    <% end %>
 
 
-</div>
+

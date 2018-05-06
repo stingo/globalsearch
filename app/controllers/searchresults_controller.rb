@@ -10,13 +10,12 @@ def index
 
 
 def search
-    @adds    = Add.ransack(name_cont: params[:q]).result(distinct: true)
-    @adds    = Add.ransack(town_cont: params[:i]).result(distinct: true)
 
-    @motors    = Motor.ransack(title_cont: params[:q]).result(distinct: true)
-    @motors    = Motor.ransack(town_cont: params[:i]).result(distinct: true)
-  
-   # @motors = Motor.ransack(title_or_address_eq: params[:q]).result
+@adds = Add.ransack(name_cont: params[:q], town_cont: params[:q1]).result(distinct: true)
+@motors = Motor.ransack(title_cont: params[:q], town_cont: params[:q1]).result(distinct: true)
+
+
+
 
     respond_to do |format|
       format.html {}
@@ -27,8 +26,6 @@ def search
     end
 end
 
-  
-  #Redirect to previous page after sign in
 
   
 
