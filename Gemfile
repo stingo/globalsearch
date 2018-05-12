@@ -12,6 +12,7 @@ gem 'simple_form'
 gem 'ionicons-rails', '~> 2.0'
 gem 'jquery-rails'
 gem 'friendly_id', '~> 5.1'
+gem 'devise'
 
 gem 'ransack', github: 'activerecord-hackery/ransack'
 

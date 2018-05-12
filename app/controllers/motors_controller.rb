@@ -1,4 +1,5 @@
 class MotorsController < ApplicationController
+  before_action :authenticate_profile!
   before_action :set_motor, only: [:show, :edit, :update, :destroy]
 
   # GET /motors

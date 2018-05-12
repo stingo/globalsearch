@@ -10,10 +10,14 @@
   </head>
 
   <body>
+     <%= render 'shared/navbar' %>
+       <%= render 'layouts/menu' %>
+  <%= render 'layouts/carousel' %>
     <%= yield %>
+
   </body>
 
-  <%= render 'layouts/menu' %>
-  <%= render 'layouts/carousel' %>
+
+
 </html>
 

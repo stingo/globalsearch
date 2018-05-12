@@ -1,4 +1,5 @@
 class AddsController < ApplicationController
+  before_action :authenticate_profile!
   before_action :set_add, only: [:show, :edit, :update, :destroy]
 
   # GET /adds
