@@ -10,13 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_12_033954) do
+ActiveRecord::Schema.define(version: 2018_05_17_144700) do
 
   create_table "adds", force: :cascade do |t|
     t.string "name"
     t.string "slug"
     t.string "town"
     t.string "local_area"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "feedbacks", force: :cascade do |t|
+    t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
