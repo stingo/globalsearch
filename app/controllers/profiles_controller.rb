@@ -11,6 +11,8 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
+    @review = Review.new
+    @reviews = Review.where(profile_id: params[:id])
   end
 
   # GET /profiles/new

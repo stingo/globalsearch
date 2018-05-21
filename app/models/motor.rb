@@ -1,3 +1,3 @@
 class Motor < ApplicationRecord
-	belongs_to :profiles
+	#belongs_to :profiles
 end

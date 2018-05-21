@@ -1,0 +1,19 @@
+<%= simple_form_for([@profile, review], remote: true, :defaults => { :input_html => { :class => "form-control"}}) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Add Your Reviews</label>
+    <div style="margin-bottom: 10px;" id='star-rating'></div>
+    <%= f.input :comment, :input_html => {rows: "5"} %>
+  </div>
+  <%= f.button :submit, class: "btn btn-primary btn-block"  %>
+
+ <% end %>
+
+
+  <script>
+  $('#star-rating').raty({
+      path: '/assets',
+      scoreName: 'review[rating]'
+  });
+  </script>

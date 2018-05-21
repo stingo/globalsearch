@@ -1,0 +1,29 @@
+<% @reviews.each do |review| %>
+  <div class="row">
+    <div class="col-sm-3">
+      <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
+      <div class="review-block-name">
+        <a href="#"><%= review.profile.first_name %></a>
+      </div>
+      <div class="review-block-date"><%= review.created_at.strftime("%B %d, %Y") %><br/><%= time_ago_in_words(review.created_at) %>
+        ago</div>
+    </div>
+    <div class="col-sm-9">
+      <div class="review-block-rate">
+        <div class="star-rating" data-score=<%= review.rating %>></div>
+      </div>
+      <div class="review-block-description"><%= review.comment %></div>
+    </div>
+  </div>
+  <hr/>
+<% end %>
+
+<script>
+  $('.star-rating').raty({
+    path: '/assets/',
+    readOnly: true,
+    score: function () {
+      return $(this).attr('data-score');
+    }
+  });
+</script>

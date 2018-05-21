@@ -3,23 +3,19 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
 
-
-
-
-   protected
-
+  protected
 
 
   def configure_permitted_parameters
+
     devise_parameter_sanitizer.permit(:sign_up) do |profile_params|
-    profile_params.permit(:first_name, :last_name, :email, :password, :password_confirmation )
-  end
+      profile_params.permit(:first_name, :last_name, :email, :password, :password_confirmation )
+    end
 
-  devise_parameter_sanitizer.permit(:account_update) do |profile_params|
-    profile_params.permit(:first_name, :last_name, :email, :password, :password_confirmation )
-  end
+    devise_parameter_sanitizer.permit(:account_update) do |profile_params|
+      profile_params.permit(:first_name, :last_name, :email, :password, :password_confirmation )
+    end
 
-
-
+    # devise_parameter_sanitizer(:sign_in) { |u| u.permit(:first_name, :last_name, :email, :password, :remember_me) }
   end
 end
