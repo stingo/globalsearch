@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
   resources :reviews
   devise_for :profiles
+
+  
   resources :profiles do
     resources :reviews
   end
+
+
   resources :adds
   resources :motors
 
