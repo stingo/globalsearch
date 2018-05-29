@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
   # GET /reviews/new
   def new
     # @profile = Profile.find(params[:id])
-    @profile = Profile.last
+    @profile = Profile.find(params[:id])
     @review = Review.new
   end
 
