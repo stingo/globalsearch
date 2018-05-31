@@ -5,6 +5,7 @@
     <label for="exampleFormControlTextarea1">Add Your Reviews</label>
     <div style="margin-bottom: 10px;" id='star-rating'></div>
     <%= f.input :comment, :input_html => {rows: "5"} %>
+    <%= f.hidden_field :reviewer_id, :value => current_profile.id %>
   </div>
   <%= f.button :submit, class: "btn btn-primary btn-block"  %>
 

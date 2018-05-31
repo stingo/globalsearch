@@ -3,7 +3,9 @@
     <div class="col-sm-3">
       <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
       <div class="review-block-name">
-        <a href="#"><%= review.profile.first_name %></a>
+        <% unless review.reviewer_id.nil? %>
+        <a href="#"><%= Profile.find(review.reviewer_id).first_name %></a>
+        <% end %>
       </div>
       <div class="review-block-date"><%= review.created_at.strftime("%B %d, %Y") %><br/><%= time_ago_in_words(review.created_at) %>
         ago</div>
